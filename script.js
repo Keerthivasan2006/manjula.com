@@ -248,28 +248,33 @@ class MobileFixApp {
 
   toggleMobileMenu() {
     this.mobileMenuOpen = !this.mobileMenuOpen
-    const mobileMenu = document.querySelector(".mobile-nav-menu")
-    const menuToggle = document.querySelector(".mobile-menu-toggle")
+    const app = document.getElementById("app")
+    const mobileMenu = app?.querySelector(".mobile-nav-menu")
+    const menuToggle = app?.querySelector(".mobile-menu-toggle")
 
-    if (mobileMenu) {
+    if (mobileMenu && menuToggle) {
       if (this.mobileMenuOpen) {
         mobileMenu.classList.add("active")
         menuToggle.classList.add("active")
+        document.body.style.overflow = "hidden"
       } else {
         mobileMenu.classList.remove("active")
         menuToggle.classList.remove("active")
+        document.body.style.overflow = ""
       }
     }
   }
 
   closeMobileMenu() {
     this.mobileMenuOpen = false
-    const mobileMenu = document.querySelector(".mobile-nav-menu")
-    const menuToggle = document.querySelector(".mobile-menu-toggle")
+    const app = document.getElementById("app")
+    const mobileMenu = app?.querySelector(".mobile-nav-menu")
+    const menuToggle = app?.querySelector(".mobile-menu-toggle")
 
-    if (mobileMenu) {
+    if (mobileMenu && menuToggle) {
       mobileMenu.classList.remove("active")
       menuToggle.classList.remove("active")
+      document.body.style.overflow = ""
     }
   }
 
